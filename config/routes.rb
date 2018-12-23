@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   end
 
   root to: 'homes#show'
+  get 'shouts/:id(.:format)', to: 'shouts#show', as: "shout"
+  resource :shouts, only: [:create]
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
 
-  resources :users, only: [:create] do
+  resources :users, only: [:create, :show] do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
