@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # App Engines mean has its own application bundled up.
 gem 'clearance'
+gem 'paperclip'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
